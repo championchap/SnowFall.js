@@ -1,8 +1,0 @@
-version: '3'
-
-services:
-  node:
-    image: node:10
-    working_dir: '/code'
-    volumes:
-      - .:/code
