@@ -159,7 +159,10 @@ function schedule(sch = {}, config = {}) {
   const isInRange = sch.months.includes(month)
 
   if (isInRange) {
-    start(config)
+    const density = 100
+    const flakeSize = 2
+
+    start({ ...config, density, flakeSize })
   }
 }
 
