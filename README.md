@@ -11,6 +11,7 @@ displayed over the top. [Check out this example](http://erikwatson.me/?snow).
 - [API Reference](https://erikwatson.github.io/snowfall.js/)
 - Easy to use.
 - Simple, but beautiful.
+- Scheduling, so you can set it and forget it.
 - Multiple layers give the illusion of depth.
 - Density of snowflakes looks correct even when the window is resized.
 - Small, with no dependencies.
