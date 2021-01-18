@@ -13,12 +13,12 @@
     "effect"
   ],
   "scripts": {
-    "build": "yarn webpack --config ./webpack.development.js",
-    "build:production": "yarn webpack --config ./webpack.production.js",
-    "build:all": "yarn build && yarn build:production",
-    "build:docs": "yarn jsdoc src/snowfall.js -d ./docs README.md",
-    "watch": "yarn run build --watch",
-    "pub": "yarn build:all && npm publish"
+    "build": "npx webpack --config ./webpack.development.js",
+    "build:production": "npx webpack --config ./webpack.production.js",
+    "build:all": "npm build && yarn build:production",
+    "build:docs": "npx jsdoc src/snowfall.js -d ./docs README.md",
+    "watch": "npm run build --watch",
+    "pub": "npm build:all && npm publish"
   },
   "devDependencies": {
     "@babel/core": "^7.4.3",
