@@ -13,6 +13,7 @@ const ctx = canvas.getContext('2d')
 let gravity = vec2.create(0, 0.7)
 let wind = vec2.create(0, 0)
 let density = 200
+let flakeSize = 3
 
 let snowflakes = []
 
@@ -43,6 +44,7 @@ let scroll = false
  * when the app starts or should they begin at their full size?
  * @property {Boolean} [scroll = false] - Should the snowflakes scroll when
  * the user scrolls up and down the page?
+ * @property {number} [flakeSize = 3] - The minimum size of a snowflake.
  *
  * @property {Object} wave - Configure the wave motion of the snowflakes.
  * @property {number} [wave.frequency = 0.02] - The frequency of the wave
@@ -86,6 +88,10 @@ function start(config = {}) {
 
   if (config.scroll !== undefined) {
     scroll = config.scroll
+  }
+
+  if (config.flakeSize !== undefined) {
+    flakeSize = config.flakeSize
   }
 
   if (config.wave !== undefined) {
@@ -160,7 +166,7 @@ function schedule(sch = {}, config = {}) {
 
   if (isInRange) {
     const density = 100
-    const flakeSize = 2
+    const flakeSize = 0
 
     start({ ...config, density, flakeSize })
   }
@@ -376,7 +382,7 @@ function makeSnowflakes(num) {
   let result = []
 
   while (num--) {
-    const size = 3 + Math.random() * 5
+    const size = flakeSize + Math.random() * 5
     const renderedSize = fadeIn === true ? 0 : size
 
     result.push({
